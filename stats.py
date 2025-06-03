@@ -1,15 +1,17 @@
-from main import get_book_text
+def get_book_text(path_to_book):
+    with open(path_to_book) as f:
+        text = f.read()
+    return text
 
 def num_words(text):
-    count = 0
+    word_count = 0
     words = text.split()
     for word in words:
-        count += 1
-    return count
+        word_count += 1
+    return word_count
 
 def num_chars(text):
-    chars = {}
-    words = get_book_text(text)
-    for char in words:
-        if blah:
-            chars[char] = 
+    chars = {} 
+    for i in range(0, len(text)):
+        if i != chars:
+            chars[i] += 1
