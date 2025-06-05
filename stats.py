@@ -12,7 +12,15 @@ def num_words(text):
 
 def num_chars(text):
     letters = {}
-    for char in text:
-        if letters[char] == False:
+    lower = text.lower()
+    for char in lower:
+        if char in letters:
             letters[char] += 1
-        return letters
+        else:
+            letters[char] = 1
+    return letters
+
+def sort_count(dict):
+    max_so_far = int("-inf")
+    for key in dict:
+        
