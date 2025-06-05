@@ -11,7 +11,8 @@ def num_words(text):
     return word_count
 
 def num_chars(text):
-    chars = {} 
-    for i in range(0, len(text)):
-        if i != chars:
-            chars[i] += 1
+    letters = {}
+    for char in text:
+        if letters[char] == False:
+            letters[char] += 1
+        return letters
