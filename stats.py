@@ -20,7 +20,5 @@ def num_chars(text):
             letters[char] = 1
     return letters
 
-def sort_count(dict):
-    max_so_far = int("-inf")
-    for key in dict:
-        
+def sort_on(dict):
+    return dict["num"]
