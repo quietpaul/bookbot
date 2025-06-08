@@ -1,14 +1,20 @@
-from stats import num_words
-from stats import num_chars
-from stats import get_book_text
-from stats import sort_on
+from stats import num_words, num_chars, get_book_text, sort_on, sort_list
 
 def main():
-    book = get_book_text("books/frankenstein.txt")
+    book_path = "books/frankenstein.txt"
+    book = get_book_text(book_path)
     word_count = num_words(book)
-    unsorted = num_chars(book)
-    print(f"{word_count} words found in the document")
-    print(unsorted.sort(reverse=True, key=sort_on))
+    unsorted_dict = num_chars(book)
+    sorted_list = sort_list(unsorted_dict)
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {book_path}...")
+    print("----------- Word Count ----------")
+    print(f"Found {word_count} total words")
+    print("--------- Character Count -------")
+    for item in sorted_list:
+        if item["char"].isalpha():
+            print(f'{item["char"]}: {item["num"]}')
+    print("============= END ===============")
     
 
 main()

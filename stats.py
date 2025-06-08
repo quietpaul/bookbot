@@ -22,3 +22,13 @@ def num_chars(text):
 
 def sort_on(dict):
     return dict["num"]
+
+def sort_list(dict):
+    final_list = []
+    for item in dict:
+        final_list.append({
+            "char" : item,
+            "num" : dict[item],
+        })
+    final_list.sort(reverse=True, key=sort_on)
+    return final_list
